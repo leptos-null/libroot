@@ -25,11 +25,11 @@ jobs:
         run: |
           sudo installer -pkg swift-5.10-RELEASE-osx.pkg -target /
 
-          ls $(xcode-select -p)/Toolchains
+          ls /Library/Developer/Toolchains/
 
       - name: Build
         run: |
-          make "TOOLCHAIN_PREFIX = $(pwd)/toolchains/linux/iphone/bin/" "SDK_PATH = $(pwd)/sdks/iPhoneOS16.5.sdk"
+          make "TOOLCHAIN_PREFIX = /Library/Developer/Toolchains"/swift-*.xctoolchain/usr/bin/
           # adjust names
           mv libroot_dyn_iphoneos-arm.a libroot_oldabi.a
           mv libroot_dyn_iphoneos-arm64.a rootless-libroot_oldabi.a
