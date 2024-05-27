@@ -31,7 +31,7 @@ jobs:
       - name: Build
         run: |
           # debug
-          ls toolchains/linux/iphone/bin/
+          ls -d sdks/iPhoneOS16.5.sdk
 
           make TOOLCHAIN_PREFIX=toolchains/linux/iphone/bin/ SDK_PATH=sdks/iPhoneOS16.5.sdk
           # adjust names
@@ -64,6 +64,7 @@ jobs:
       contents: read
       attestations: write
     runs-on: macos-14
+    if: ${{ false }}
     env:
       DEVELOPER_DIR: /Applications/Xcode_15.1.app
     steps:
