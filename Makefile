@@ -11,7 +11,7 @@ IPHONEOS_ARM_OBJ_FILES := $(patsubst src/%.c,$(IPHONEOS_ARM_BUILD_DIR)/%.o,$(SRC
 IPHONEOS_ARM64_BUILD_DIR := build/iphoneos_arm64
 IPHONEOS_ARM64_OBJ_FILES := $(patsubst src/%.c,$(IPHONEOS_ARM64_BUILD_DIR)/%.o,$(SRC_FILES))
 
-CFLAGS = -v -Isrc -isysroot $(SDK_PATH) -arch armv6 -arch armv7 -arch armv7s -arch arm64 -arch arm64e -miphoneos-version-min=7.0 -O2
+CFLAGS = -v -Isrc -isysroot $(SDK_PATH) -target arm64-apple-ios7.0 -miphoneos-version-min=7.0 -O2
 LDFLAGS =
 
 all: libroot_dyn_iphoneos-arm.a libroot_dyn_iphoneos-arm64.a
