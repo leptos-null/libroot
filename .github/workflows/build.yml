@@ -30,10 +30,7 @@ jobs:
 
       - name: Build
         run: |
-          # debug
-          ls -d sdks/iPhoneOS16.5.sdk
-
-          make TOOLCHAIN_PREFIX=toolchains/linux/iphone/bin/ SDK_PATH=sdks/iPhoneOS16.5.sdk
+          make "TOOLCHAIN_PREFIX = $(pwd)/toolchains/linux/iphone/bin/" "SDK_PATH = $(pwd)/sdks/iPhoneOS16.5.sdk"
           # adjust names
           mv libroot_dyn_iphoneos-arm.a libroot_oldabi.a
           mv libroot_dyn_iphoneos-arm64.a rootless-libroot_oldabi.a
