@@ -25,7 +25,8 @@ jobs:
         run: |
           sudo installer -pkg swift-5.10-RELEASE-osx.pkg -target /
 
-          ls /Library/Developer/Toolchains/
+          ls /Library/Developer/Toolchains/swift-5.10-RELEASE.xctoolchain/usr/bin/
+          ls /Library/Developer/Toolchains/swift-5.10-RELEASE.xctoolchain/usr/
 
       - name: Build
         run: |
