@@ -1,6 +1,6 @@
 TOOLCHAIN_PREFIX ?= 
-CC = $(TOOLCHAIN_PREFIX)clang
-LIBTOOL = libtool
+CC ?= $(TOOLCHAIN_PREFIX)clang
+LIBTOOL ?= $(TOOLCHAIN_PREFIX)libtool
 
 SRC_FILES := $(wildcard src/*.c)
 
