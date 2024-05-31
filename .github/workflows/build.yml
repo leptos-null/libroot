@@ -18,20 +18,20 @@ jobs:
 
       - name: Download Toolchain
         run: |
-          curl -sL https://download.swift.org/swift-5.8.1-release/xcode/swift-5.8.1-RELEASE/swift-5.8.1-RELEASE-osx.pkg \
-            -o swift-5.8.1-RELEASE-osx.pkg
+          curl -sL https://download.swift.org/swift-5.9.2-release/xcode/swift-5.9.2-RELEASE/swift-5.9.2-RELEASE-osx.pkg \
+            -o swift-5.9.2-RELEASE-osx.pkg
 
       - name: Install Toolchain
         run: |
-          sudo installer -pkg swift-5.8.1-RELEASE-osx.pkg -target /
+          sudo installer -pkg swift-5.9.2-RELEASE-osx.pkg -target /
 
           ls /Library/Developer/Toolchains/
-          ls /Library/Developer/Toolchains/swift-5.8.1-RELEASE.xctoolchain/usr/
-          ls /Library/Developer/Toolchains/swift-5.8.1-RELEASE.xctoolchain/usr/bin/
+          ls /Library/Developer/Toolchains/swift-5.9.2-RELEASE.xctoolchain/usr/
+          ls /Library/Developer/Toolchains/swift-5.9.2-RELEASE.xctoolchain/usr/bin/
 
       - name: Build
         run: |
-          make "TOOLCHAIN_PREFIX = /Library/Developer/Toolchains/swift-5.8.1-RELEASE.xctoolchain/usr/bin/"
+          make "TOOLCHAIN_PREFIX = /Library/Developer/Toolchains/swift-5.9.2-RELEASE.xctoolchain/usr/bin/"
           # adjust names
           mv libroot_dyn_iphoneos-arm.a libroot_oldabi.a
           mv libroot_dyn_iphoneos-arm64.a rootless-libroot_oldabi.a
